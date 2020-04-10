@@ -33,7 +33,8 @@ import DisplayColor from './Components/DisplayColor';
       updateUserEntries = (e) => {
         e.preventDefault()
         const entries = [{colorName: this.state.userInput, colorHex: this.state.userSelectedColor}]
-        const userRecords = this.state.colorList.concat(entries)
+        // const userRecords = this.state.colorList.concat(entries)
+        const userRecords = entries.concat(this.state.colorList)
         this.setState({
           colorList: userRecords  
         })

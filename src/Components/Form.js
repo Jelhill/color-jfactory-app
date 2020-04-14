@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 export default function Form({colorList, getUserSelectedColor, getUserInput, updateUserEntries}){  
 
@@ -16,7 +17,9 @@ export default function Form({colorList, getUserSelectedColor, getUserInput, upd
                 <div>
                     <button onClick={updateUserEntries}>Add Color</button>
                 </div>
-            </form>                
+            </form>
+
+            <Link to={"/"}><h3>Go back to Home</h3></Link>         
         </div>            
     )
 }

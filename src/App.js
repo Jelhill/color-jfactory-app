@@ -14,7 +14,7 @@ import DisplayColor from './Components/DisplayColor';
   class App extends Component {
         state = {
           colorList: colorList,
-          userInput: "",
+          userInput: "",  
           userSelectedColor: ""
         }
 
@@ -33,7 +33,6 @@ import DisplayColor from './Components/DisplayColor';
       updateUserEntries = (e) => {
         e.preventDefault()
         const entries = [{colorName: this.state.userInput, colorHex: this.state.userSelectedColor}]
-        // const userRecords = this.state.colorList.concat(entries)
         const userRecords = entries.concat(this.state.colorList)
         this.setState({
           colorList: userRecords  
@@ -45,14 +44,18 @@ import DisplayColor from './Components/DisplayColor';
       return (
         <div>
           <Switch>
-            <Route exact path="/" component={() => <Navbar colorList={this.state.colorList}/>}/>
+            <Route exact path="/" 
+              component={() => <Navbar colorList={this.state.colorList}/>}/>
+
             <Route path="/form" 
               render={() =><Form colorList={this.state.colorList} 
               getUserInput={this.getUserInput} 
               getUserSelectedColor={this.getUserSelectedColor} 
               updateUserEntries={this.updateUserEntries}
               />}/>
-            <Route path="/displayColor/:color" component={() => <DisplayColor colorList={this.state.colorList}/>}/>
+
+            <Route path="/displayColor/:colorName/:colorHex" 
+              component={() => <DisplayColor colorList={this.state.colorList}/>}/>
           </Switch>    
         </div>      
       );

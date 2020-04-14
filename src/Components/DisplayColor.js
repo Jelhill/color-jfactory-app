@@ -3,11 +3,11 @@ import { Link, useParams } from "react-router-dom"
 
 export default function DisplayColor({colorList}) {
     
-    const { color } = useParams()
-    console.log(color)
+    const { colorName, colorHex } = useParams()
+
     return (
-        <div className="colorDisplay" style={{background: `#${color}`}}>
-            <h1>This is Hex Color {`#${color}`}</h1>
+        <div className="colorDisplay" style={{background: `#${colorHex}`}}>
+            <h1>This is Hex Color {colorName} with Hex {`#${colorHex}`}</h1>
             <Link to={"/"}><h1>Go Back</h1></Link>
         </div>
     )

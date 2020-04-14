@@ -13,6 +13,11 @@
   bottom: 0;
 }
 
+.form-container h3{
+text-align: center;
+margin-top: 50px;
+}
+
 .form-wrapper{
   margin: auto;
   width: 500px;

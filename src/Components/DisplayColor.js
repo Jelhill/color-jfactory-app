@@ -7,7 +7,7 @@ export default function DisplayColor({colorList}) {
 
     return (
         <div className="colorDisplay" style={{background: `#${colorHex}`}}>
-            <h1>This is Hex Color {colorName} with Hex {`#${colorHex}`}</h1>
+            <h1>This is Color {colorName} with Hex {`#${colorHex}`}</h1>
             <Link to={"/"}><h1>Go Back</h1></Link>
         </div>
     )
